@@ -48,7 +48,7 @@ class Run
 			Lib.println("17. RrBroker");
 			Lib.println("18. RrServer");
 			Lib.println("");
-			Lib.println("19. MsgQueue");
+			Lib.println("19. MsgQueue (**Removed in 3.1.x)");
 			Lib.println("");			
 			Lib.println("20. MTRelay");
             Lib.println("");
@@ -141,7 +141,8 @@ class Run
             case 18:
                 RrServer.main();
 			case 19:
-				MsgQueue.main();
+				// ZMQDevices removed in 3.1.x
+				// MsgQueue.main();
             case 20:
                 MTRelay.main();
             case 21:

@@ -29,7 +29,7 @@ class DuraPub
         var publisher:ZMQSocket = context.socket(ZMQ_PUB);
         
         // Uncomment next line to see effect of adding a high water mark to the publisher
-        // publisher.setsockopt(ZMQ_HWM, { hi:0, lo: 2 } );   // Set HWM to 2
+        // publisher.setsockopt(ZMQ_SNDHWM, 2);   // Set HWM to 2
         
         publisher.bind("tcp://*:5565");
         

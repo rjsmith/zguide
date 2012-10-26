@@ -30,10 +30,11 @@ class DuraPub2
         publisher.bind("tcp://*:5565");
         
         // Prevent publisher overflowing because of slow subscribers
-        publisher.setsockopt(ZMQ_HWM, { hi:0, lo: 1 } );   // Set HWM to 1
+        publisher.setsockopt(ZMQ_SNDHWM, 1);   // Set HWM to 1
         
         // Specify swap space in bytes, this covers all subscribers
-        publisher.setsockopt(ZMQ_SWAP, { hi:0, lo: 25000000 } );
+		// Removed, as ZMQ_SWAP feature has been removed in ZMQ 3.1.x
+        // publisher.setsockopt(ZMQ_SWAP, { hi:0, lo: 25000000 } );
         
         // Wait for synchronisation request
         sync.recvMsg();
